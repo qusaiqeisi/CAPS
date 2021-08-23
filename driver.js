@@ -1,27 +1,31 @@
 'use strict';
 
-const events = require('./events.js');
+require('dotenv').config();
+const io=require('socket.io-client');
+const HOST=process.env.HOST || 'http://localhost:3000';
+const socket=io.connect(`${HOST}/caps`);
 
-events.on('pickup', pickupHandler);
+
+
+
+socket.on('driverpickup', pickupHandler);
 
 function pickupHandler(payload){
 
   setTimeout(function () {
     console.log(`DRIVER: picked up ${payload.orderId}`);
-    events.emit('in-transit', payload);
+    socket.emit('in-transit', payload);
   }, 1000);
 
   setTimeout(function () {
     console.log(`DRIVER: delivered ${payload.orderId}`);
-    events.emit('delivered', payload);
+    socket.emit('delivered', payload);
   }, 4000);
 }
 
-
-events.on('pickup', (payload) => logIt('pickup', payload));
-events.on('in-transit', (payload) => logIt('in-transit', payload));
-events.on('delivered', (payload) => logIt('delivered', payload));
-
-function logIt(event, payload) {
-  console.log('EVENT', { event, time: new Date().toLocaleString(), payload });
-}
+// socket.on('pickupqusai', payload=>{
+//   setTimeout(()=>{
+//       console.log(`DRIVER: picked up ${payload.orderId}`);
+//       socket.emit('in-transit',payload);
+//   },5000);
+// });

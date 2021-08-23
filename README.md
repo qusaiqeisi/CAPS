@@ -9,6 +9,10 @@ Tactically, this will be an event driven application that “distributes” the 
 
 ## Links
 
+
+
+Pull Request: https://github.com/qusaiqeisi/CAPS/pull/2
+
 Github Actions: https://github.com/qusaiqeisi/CAPS/runs/3393476593?check_suite_focus=true
 
 Pull Request: https://github.com/qusaiqeisi/CAPS/pull/1

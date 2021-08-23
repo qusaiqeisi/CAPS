@@ -1,10 +1,10 @@
-'use strict';
-
-
-const uuid = require('uuid').v4;
-const faker = require('faker');
-const events = require('../events');
-let store = process.env.STORE || 'Toyes Us';
+"use strict";
+const events = require("../events");
+const supertest = require("supertest");
+require('dotenv').config();
+const io=require('socket.io-client');
+const HOST=process.env.HOST || 'http://localhost:3000';
+const socket=io.connect(`${HOST}/caps`);
 
 require('../driver');
 require('../vendor');
@@ -29,11 +29,11 @@ describe('events handler tests', () => {
         expect(console.log).toHaveBeenCalled();
     })
     test('delivered handler test',() => {
-        events.emit('delivered',order)
+        socket.emit('delivered',order)
         expect(console.log).toHaveBeenCalled();
     })
     test('in-transit handler test',() => {
-        events.emit('in-transit',order)
+        socket.emit('in-transit',order)
         jest.runAllTimers();
         expect(console.log).toHaveBeenCalled();
     })
