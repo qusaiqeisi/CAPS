@@ -16,6 +16,8 @@ Pull Request: https://github.com/qusaiqeisi/CAPS/pull/2
 
 ![](img/testcaps.PNG)
 
+![queue](img/labqueue.PNG)
+
 
 ## UML
 ![UML](img/uml.png)
