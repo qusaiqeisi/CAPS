@@ -7,6 +7,12 @@ CAPS Phase 1: Begin the build of an application for a company called CAPS - The 
 
 Tactically, this will be an event driven application that “distributes” the responsibility for logging to separate modules, using only events to trigger logging based on activity.
 
+CAPS Phase 2 :
+make socket connection .
+
+CAPS Phase 3:
+make queue msg 
+
 ## Links
 
 
@@ -20,6 +26,8 @@ Pull Request: https://github.com/qusaiqeisi/CAPS/pull/1
 ## test
 
 ![](img/testcaps.PNG)
+
+![queue](img/labqueue.PNG)
 
 
 ## UML

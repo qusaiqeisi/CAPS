@@ -23,9 +23,9 @@ function pickupHandler(payload){
   }, 4000);
 }
 
-// socket.on('pickupqusai', payload=>{
-//   setTimeout(()=>{
-//       console.log(`DRIVER: picked up ${payload.orderId}`);
-//       socket.emit('in-transit',payload);
-//   },5000);
-// });
+socket.emit('get_all');
+
+socket.on('chore', msg=> {
+    console.log("child got this msg: ", msg)
+    socket.emit('received', msg)
+})
