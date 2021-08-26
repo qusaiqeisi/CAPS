@@ -22,7 +22,10 @@ Pull Request: https://github.com/qusaiqeisi/CAPS/pull/2
 
 ![](img/testcaps.PNG)
 
-![queue](img/labqueue.PNG)
+![queue](img/labqueue.PN)
+
+
+![queue](img/lab13.PNG)
 
 
 ## UML
